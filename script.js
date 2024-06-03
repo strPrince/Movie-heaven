@@ -1,4 +1,4 @@
-const apiKey = 'ebbfdc7b';
+const apiKey = 'api_key_here!!';
 const genres = ['comedy', 'drama', 'action','science','romance','thriller','horror','documentry','crime','musical','fantasy']; // we put generas as wenned then bitch
 
 document.addEventListener('DOMContentLoaded', () => {
