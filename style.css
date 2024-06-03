@@ -1,0 +1,215 @@
+*{
+    margin: 0;
+    overflow-x: hidden;
+    color: #dde3a2;
+    
+}
+@font-face {
+  font-family: "mvtitle";
+  src: url(./Kugile_Demo.ttf);
+}
+main{
+    background-image: url(./back.jpg);
+    background-size:contain;
+    height: 100vh;
+    width: 100vw;
+}
+.nav{
+    display: flex;
+    
+   
+}
+.logo{
+    margin-left: 200px;
+    padding-top: 20px;
+    display: inline-flex;
+    font-size: larger;
+
+}
+.limelight-regular {
+  font-family: "Limelight", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo > a{
+  font-family: "mvtitle";
+  font-weight: 800;
+}
+a{
+  text-decoration: none;
+  color: #C060A1;
+}
+.links{
+display: flex;
+padding-top: 20px;
+gap: 20px;
+margin-left: 60%;
+font-family: "mvtitle";
+font-weight: 500;
+}
+.stuff{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    flex-direction: row;
+}
+.stuff >.head> h1{
+  font-family: "Limelight";
+}
+.ss{
+ margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: "Limelight";
+
+}
+.buttons{
+    display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+.buttons > button{
+  width: 150px;
+  height: 50px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  font-family: "Limelight";
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #dde3a2;
+  font-size: large;
+}
+.movies {
+    display: flex; 
+    flex-wrap: wrap; 
+    margin: 0; 
+    padding: 0; 
+  }
+  
+  .movie {
+    margin: 10px; 
+    border: 1px solid #ddd; 
+    padding: 10px; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  .movie img {
+    width: 100px; 
+    height: auto; 
+    margin-right: 10px; 
+  }
+  
+  .movie h3 {
+    font-size: 16px; 
+  }
+  .data{
+display: flex;
+width: 100vw;
+justify-content: center;
+flex-direction: column;
+  }
+ .about{
+    display: flex;
+    margin-top: 30px;
+    width: 100vw;
+    height: 80vh;
+    background: rgba(63, 28, 123, 0.336);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+  align-content: center;
+    flex-direction: column;
+   
+  }
+  .about > h2 {
+    display: flex;
+    margin: 40px;
+    font-family: "mvtitle";
+  }
+  .about > p {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    word-wrap: break-word;
+    word-break:keep-all;
+    font-size: large;
+    font-family: "Limelight";
+letter-spacing: 1px;
+  }
+  .about > span{
+    display: flex;
+  }
+.contect{
+  display: flex;
+  flex-direction: column;
+  background: rgba(26, 161, 171, 0.21);
+  border-radius: 10px 0 16px 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  height: 50vh;
+  margin-top: 50px;
+ 
+  align-items: center;
+}
+.contect > h2{
+  margin-top: 50px;
+  font-family: "mvtitle";
+}
+.ttx{
+  display: flex;
+  justify-content: center;
+ margin-top: 60px;
+ font-family: "Limelight";
+}
+.connect{
+  background: rgba(51, 52, 52, 0.21);
+  border-radius:3px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+ margin-top: 30px;
+}
+.connect > ul{
+  display: flex;
+  gap : 50px;
+  margin: 20px;
+
+}
+.connect > ul > li > a {
+  display: flex;
+  font-weight: 700;
+  font-size: larger;
+}
+@media (max-width: 768px) {
+  .nav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100vw;
+  }
+  .logo{
+    margin: 0;
+  }
+  .links{
+    margin-left: 15px;
+  }
+}

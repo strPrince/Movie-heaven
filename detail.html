@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details</title>
+  <style>
+    /* Add some basic styling */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .movie-details {
+      display: flex;
+      gap: 50px;
+      background:  #081b087b ;
+      border-radius: 5px;
+     
+    }
+    @media (max-width: 768px) {
+      /* Styles for screens smaller than 768px */
+      .movie-details {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        gap: 10px;  /* Adjust gap for better spacing on smaller screens */
+      }
+    }
+    .movie-poster img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+    .movie-info {
+      max-width: 600px;
+    }
+    .movie-info h1 {
+      margin-bottom: 20px;
+    }
+    .movie-info p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="movie-details">
+    <div class="movie-poster">
+      <img id="poster" src="" alt="Movie Poster">
+    </div>
+    <div class="movie-info">
+      <h1 id="title"></h1>
+      <p><strong>Year:</strong> <span id="year"></span></p>
+      <p><strong>Genre:</strong> <span id="genre"></span></p>
+      <p><strong>Director:</strong> <span id="director"></span></p>
+      <p><strong>Actors:</strong> <span id="actors"></span></p>
+      <p><strong>Plot:</strong> <span id="plot"></span></p>
+      <p><strong>Awards:</strong> <span id="awards"></span></p>
+      <p><strong>IMDb Rating:</strong> <span id="imdbRating"></span></p>
+      <p><strong>Country:</strong> <span id="country"></span></p>
+      <p><strong>Language:</strong> <span id="language"></span></p>
+      <p><strong>Runtime:</strong> <span id="runtime"></span></p>
+      <p><strong>Rated:</strong> <span id="rated"></span></p>
+      <p><strong>Type:</strong> <span id="type"></span></p>
+      <p><strong>Website:</strong> <a id="website" href="#" target="_blank"></a></p>
+    </div>
+  </div>
+
+  <script>
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const movieID = urlParams.get('id');
+
+    const apiKey = 'ebbfdc7b';
+    const url = `https://www.omdbapi.com/?i=${movieID}&apikey=${apiKey}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        //cover 
+        document.getElementById('poster').src = data.Poster !== "N/A" ? data.Poster : 'https://via.placeholder.com/400';
+
+        //other stuff
+        document.getElementById('title').textContent = data.Title;
+        document.getElementById('year').textContent = data.Year;
+        document.getElementById('genre').textContent = data.Genre;
+        document.getElementById('director').textContent = data.Director;
+        document.getElementById('actors').textContent = data.Actors;
+        document.getElementById('plot').textContent = data.Plot;
+        document.getElementById('awards').textContent = data.Awards;
+        document.getElementById('imdbRating').textContent = data.imdbRating;
+        document.getElementById('country').textContent = data.Country;
+        document.getElementById('language').textContent = data.Language;
+        document.getElementById('runtime').textContent = data.Runtime;
+        document.getElementById('rated').textContent = data.Rated;
+        document.getElementById('type').textContent = data.Type;
+        const websiteLink = document.getElementById('website');
+        websiteLink.textContent = data.Website;
+        websiteLink.href = data.Website !== "N/A" ? data.Website : '#';
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      
+      });
+  </script>
+</body>
+</html>

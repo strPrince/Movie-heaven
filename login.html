@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login-Signup</title>
+    <style>
+        *{
+            background-image: url(./back.jpg);
+            color: aliceblue;
+           
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            height: 80vh;
+            width: 40vw;
+            display: flex;
+            background-color: blueviolet;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1{
+            display: flex;
+        }
+        label{
+            margin-top: 20px;
+            font-size: larger;
+        }
+        input{
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
+            border-radius: 4px;border: 2px solid purple;
+        }
+        .mm{
+            margin-top: 80px;
+        }
+        @media (max-width: 768px) {
+            .container{
+                width: 100vw;
+            }
+            .main{
+                width: 100vw;   
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+         <h1>Login-Signup</h1>
+         
+         <label class="mm" for="email">Email</label>
+         <input type="email" placeholder="Email" name="mail" id="mail">
+         <label for="pass">Password</label>
+         <input type="password" placeholder="Password" name="pass" id="pass">
+         <input type="submit" onclick="ok()" value="submit" style="width: 40%;height: 6%;border-radius: 4px;border: 2px solid purple;">
+        </div>
+    </div>
+    <script>
+function ok(){
+
+
+    const mail=    document.getElementById('mail').value;
+  const pass =      document.getElementById('pass').value;
+
+if(mail === "admin@gmail.com" && pass === "123"){
+    window.location.href = 'home.html';
+}else{
+    alert("wrong email or password");
+}
+
+}
+    </script>
+</body>
+</html>
